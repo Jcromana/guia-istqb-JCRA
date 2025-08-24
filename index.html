@@ -65,6 +65,14 @@
             background-color: #A0522D;
             border: 2px solid #FDFBF8;
         }
+        .example {
+            background-color: #F5F1EC;
+            border-left: 3px solid #A0522D;
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -100,33 +108,36 @@
                         <h3 class="text-xl font-semibold mb-3">¿Qué es el Testing y por qué es necesario?</h3>
                         <p class="mb-4">El <strong>testing de software</strong> es un proceso para evaluar un producto y determinar si cumple con los requisitos especificados, identificando defectos para mejorar la calidad. Es una parte crucial del <strong>aseguramiento de la calidad (QA)</strong>.</p>
                         <p>Es necesario para <strong>mitigar riesgos</strong>, <strong>mejorar la calidad</strong> del producto y <strong>cumplir con requisitos</strong> contractuales o legales, asegurando que el software es fiable y satisface las necesidades del usuario.</p>
-                        <div class="mt-4 p-4 bg-[#F5F1EC] rounded-lg text-sm">
-                            <p><strong>Error:</strong> Una acción humana que produce un resultado incorrecto.</p>
-                            <p><strong>Defecto (Bug):</strong> El resultado de un error en el código o documento.</p>
-                            <p><strong>Fallo:</strong> La manifestación visible de un defecto cuando el software no se comporta como se espera.</p>
+                        <div class="example">
+                            <p><strong>Ejemplo:</strong></p>
+                            <ul class="list-disc list-inside mt-1">
+                                <li><strong>Error:</strong> Un desarrollador escribe `>` en lugar de `>=` en una condición para validar la edad.</li>
+                                <li><strong>Defecto (Bug):</strong> El código ahora rechaza incorrectamente a los usuarios que tienen exactamente 18 años.</li>
+                                <li><strong>Fallo:</strong> Un usuario de 18 años intenta registrarse y el sistema le muestra un mensaje de "Edad no permitida".</li>
+                            </ul>
                         </div>
                     </div>
 
                     <h3 class="text-xl font-semibold mb-4">Siete Principios del Testing</h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="card"><strong>1.</strong> El testing demuestra la presencia de defectos, no su ausencia.</div>
-                        <div class="card"><strong>2.</strong> Es imposible realizar pruebas exhaustivas.</div>
-                        <div class="card"><strong>3.</strong> Las pruebas tempranas ahorran tiempo y dinero.</div>
-                        <div class="card"><strong>4.</strong> Los defectos se agrupan (Principio de Pareto).</div>
-                        <div class="card"><strong>5.</strong> La paradoja del pesticida.</div>
-                        <div class="card"><strong>6.</strong> El testing depende del contexto.</div>
-                        <div class="card md:col-span-2"><strong>7.</strong> La falacia de la ausencia de errores.</div>
+                        <div class="card"><strong>1. El testing demuestra la presencia de defectos, no su ausencia.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Aunque probemos 1000 inicios de sesión exitosos, no podemos garantizar que el 1001 no fallará.</p></div>
+                        <div class="card"><strong>2. Es imposible realizar pruebas exhaustivas.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Probar un campo de texto con cada carácter Unicode posible es inviable; en su lugar, usamos técnicas para seleccionar los más relevantes.</p></div>
+                        <div class="card"><strong>3. Las pruebas tempranas ahorran tiempo y dinero.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Encontrar un error en el documento de requisitos cuesta minutos; encontrarlo en producción puede costar miles de euros.</p></div>
+                        <div class="card"><strong>4. Los defectos se agrupan (Principio de Pareto).</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Es común que el 80% de los defectos se encuentren en el 20% de los módulos, como el de procesamiento de pagos.</p></div>
+                        <div class="card"><strong>5. La paradoja del pesticida.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Si siempre probamos el login con "user/pass", dejaremos de encontrar nuevos fallos. Hay que variar los datos.</p></div>
+                        <div class="card"><strong>6. El testing depende del contexto.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Un videojuego requiere pruebas de jugabilidad y rendimiento gráfico, mientras que una app bancaria exige máxima seguridad.</p></div>
+                        <div class="card md:col-span-2"><strong>7. La falacia de la ausencia de errores.</strong><p class="text-sm mt-2 text-gray-600">Ejemplo: Un software sin fallos pero que es difícil de usar y no resuelve el problema del cliente, es inútil.</p></div>
                     </div>
 
                     <h3 class="text-xl font-semibold mt-8 mb-4">Proceso de Testing</h3>
                     <div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Planificación</h4><p class="text-sm text-gray-600">Definir estrategia, objetivos y recursos.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Monitorización y Control</h4><p class="text-sm text-gray-600">Comparar progreso con el plan y corregir desviaciones.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Análisis</h4><p class="text-sm text-gray-600">Revisar la base de pruebas para identificar qué probar.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Diseño</h4><p class="text-sm text-gray-600">Especificar casos de prueba de alto nivel.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Implementación</h4><p class="text-sm text-gray-600">Crear casos de prueba detallados y preparar el entorno.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Ejecución</h4><p class="text-sm text-gray-600">Ejecutar pruebas y registrar resultados.</p></div>
-                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Finalización</h4><p class="text-sm text-gray-600">Recopilar resultados y elaborar informes finales.</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Planificación</h4><p class="text-sm text-gray-600">Definir qué se va a probar, cómo, quién lo hará y cuándo. Se crea el Plan de Pruebas.</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Monitorización y Control</h4><p class="text-sm text-gray-600">Seguimiento del progreso con métricas. Si las pruebas se retrasan, el control implica tomar acciones.</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Análisis</h4><p class="text-sm text-gray-600">Estudiar los requisitos para identificar las condiciones de prueba. ¿Qué podemos probar?</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Diseño</h4><p class="text-sm text-gray-600">Crear casos de prueba de alto nivel. ¿Cómo vamos a probarlo?</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Implementación</h4><p class="text-sm text-gray-600">Escribir los pasos detallados de los casos de prueba y preparar el entorno y los datos.</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Ejecución</h4><p class="text-sm text-gray-600">Ejecutar los casos de prueba, comparar resultados y reportar discrepancias.</p></div>
+                        <div class="process-step"><div class="process-dot"></div><h4 class="font-semibold">Finalización</h4><p class="text-sm text-gray-600">Recopilar resultados, crear informes finales y archivar los artefactos de prueba.</p></div>
                     </div>
                 </section>
 
@@ -138,19 +149,19 @@
                     <div class="card mb-8">
                         <h3 class="text-xl font-semibold mb-3">Niveles de Prueba</h3>
                         <div class="space-y-4">
-                            <p><strong>Pruebas de Componente (Unitarias):</strong> Se centran en probar componentes individuales de forma aislada.</p>
-                            <p><strong>Pruebas de Integración:</strong> Verifican la interacción entre componentes o sistemas integrados.</p>
-                            <p><strong>Pruebas de Sistema:</strong> Evalúan el sistema completo para verificar que cumple con los requisitos especificados.</p>
-                            <p><strong>Pruebas de Aceptación (UAT):</strong> Realizadas por los usuarios para validar que el sistema cumple con sus necesidades.</p>
+                            <div><p><strong>Pruebas de Componente (Unitarias):</strong> Se centran en probar componentes individuales de forma aislada.</p><div class="example">Ejemplo: Probar una función `calcularIVA()` para asegurar que devuelve el valor correcto para diferentes entradas.</div></div>
+                            <div><p><strong>Pruebas de Integración:</strong> Verifican la interacción entre componentes o sistemas integrados.</p><div class="example">Ejemplo: Probar que el módulo de "carrito de la compra" se comunica correctamente con el módulo de "pasarela de pago".</div></div>
+                            <div><p><strong>Pruebas de Sistema:</strong> Evalúan el sistema completo para verificar que cumple con los requisitos especificados.</p><div class="example">Ejemplo: Probar el flujo completo de una compra online, desde añadir un producto al carrito hasta recibir el email de confirmación.</div></div>
+                            <div><p><strong>Pruebas de Aceptación (UAT):</strong> Realizadas por los usuarios para validar que el sistema cumple con sus necesidades.</p><div class="example">Ejemplo: Un cliente final prueba la nueva funcionalidad de "reservar cita" para confirmar que es intuitiva y funciona como esperaba.</div></div>
                         </div>
                     </div>
 
                     <div class="card mb-8">
                         <h3 class="text-xl font-semibold mb-3">Tipos de Prueba</h3>
-                        <p class="mb-2"><strong>Pruebas Funcionales:</strong> Verifican <strong>qué</strong> hace el sistema (ej. iniciar sesión).</p>
-                        <p class="mb-2"><strong>Pruebas No Funcionales:</strong> Verifican <strong>cómo</strong> funciona el sistema (rendimiento, usabilidad, seguridad).</p>
-                        <p class="mb-2"><strong>Pruebas de Confirmación (Re-testing):</strong> Confirman que un defecto ha sido corregido.</p>
-                        <p><strong>Pruebas de Regresión:</strong> Aseguran que los cambios no han introducido nuevos defectos en funcionalidades existentes.</p>
+                         <div><p class="mb-2"><strong>Pruebas Funcionales:</strong> Verifican <strong>qué</strong> hace el sistema.</p><div class="example">Ejemplo: Probar que al hacer clic en "Exportar a PDF", se genera un archivo PDF válido.</div></div>
+                         <div class="mt-4"><p class="mb-2"><strong>Pruebas No Funcionales:</strong> Verifican <strong>cómo</strong> funciona el sistema.</p><div class="example">Ejemplo: Probar que la página de inicio carga en menos de 3 segundos con 100 usuarios concurrentes (rendimiento).</div></div>
+                         <div class="mt-4"><p class="mb-2"><strong>Pruebas de Confirmación (Re-testing):</strong> Confirman que un defecto ha sido corregido.</p><div class="example">Ejemplo: Un bug causaba un error al pagar con American Express. Tras el arreglo, se vuelve a probar el pago con esa tarjeta.</div></div>
+                         <div class="mt-4"><p><strong>Pruebas de Regresión:</strong> Aseguran que los cambios no han introducido nuevos defectos en funcionalidades existentes.</p><div class="example">Ejemplo: Tras arreglar el bug de American Express, se prueba que el pago con Visa y Mastercard siga funcionando correctamente.</div></div>
                     </div>
 
                     <div class="card">
@@ -161,6 +172,7 @@
                             <li><strong>Entrega/Despliegue Continuo (CD):</strong> El software que pasa las pruebas se puede desplegar automáticamente.</li>
                             <li><strong>Shift-Left:</strong> El testing se "desplaza a la izquierda", comenzando lo antes posible en el ciclo de vida para una retroalimentación más rápida.</li>
                         </ul>
+                        <div class="example">Ejemplo: Un desarrollador sube un cambio. El servidor de CI (ej. Jenkins) compila el código, ejecuta pruebas unitarias y de integración. Si todo es correcto, lo despliega en un entorno de pruebas automáticamente para las pruebas de sistema.</div>
                     </div>
                 </section>
 
@@ -172,15 +184,15 @@
                     <div class="card mb-8">
                         <h3 class="text-xl font-semibold mb-3">Fundamentos y Proceso de Revisión</h3>
                         <p>Las pruebas estáticas encuentran defectos directamente en los productos de trabajo, sin necesidad de ejecutar el software. Su principal beneficio es la <strong>detección temprana de defectos</strong>, lo que reduce significativamente el costo de corrección.</p>
-                        <p class="mt-2">Un proceso de revisión formal incluye roles como <strong>Autor, Moderador y Revisor</strong>, y sigue fases como planificación, preparación individual y seguimiento.</p>
+                        <div class="example">Ejemplo: Durante la revisión de un documento de requisitos, un tester detecta una ambigüedad: "El sistema debe ser rápido". Esto es un defecto en la documentación que se corrige antes de escribir una sola línea de código.</div>
                     </div>
                     
                     <h3 class="text-xl font-semibold mb-4">Tipos de Revisión</h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="card"><h4 class="font-bold">Revisión Informal</h4><p class="text-sm">Simple revisión por un compañero, sin proceso formal.</p></div>
-                        <div class="card"><h4 class="font-bold">Walkthrough</h4><p class="text-sm">El autor presenta el documento para obtener feedback.</p></div>
-                        <div class="card"><h4 class="font-bold">Revisión Técnica</h4><p class="text-sm">Proceso formal dirigido por un moderador para que expertos busquen defectos.</p></div>
-                        <div class="card"><h4 class="font-bold">Inspección</h4><p class="text-sm">El tipo de revisión más formal y riguroso, con métricas definidas.</p></div>
+                        <div class="card"><h4 class="font-bold">Revisión Informal</h4><p class="text-sm">Ejemplo: Un desarrollador le pide a un compañero que eche un vistazo rápido a su código antes de subirlo.</p></div>
+                        <div class="card"><h4 class="font-bold">Walkthrough</h4><p class="text-sm">Ejemplo: Un analista de negocio presenta los nuevos mockups de la interfaz a desarrolladores y testers para recoger feedback inicial.</p></div>
+                        <div class="card"><h4 class="font-bold">Revisión Técnica</h4><p class="text-sm">Ejemplo: Un arquitecto de software lidera una sesión para revisar el diseño técnico de un nuevo microservicio con otros desarrolladores senior.</p></div>
+                        <div class="card"><h4 class="font-bold">Inspección</h4><p class="text-sm">Ejemplo: Se realiza una inspección formal del plan de pruebas de un sistema crítico, con métricas de defectos encontrados por página y seguimiento formal.</p></div>
                     </div>
                 </section>
 
@@ -196,11 +208,15 @@
                                 <span class="accordion-arrow transition-transform duration-300">▼</span>
                             </button>
                             <div class="accordion-content pt-4 text-gray-700">
-                                <p><strong>Partición de Equivalencia:</strong> Divide los datos de entrada en grupos equivalentes. Se prueba un valor de cada grupo.</p>
-                                <p class="mt-2"><strong>Análisis de Valores Límite:</strong> Prueba los bordes o límites de las particiones, donde suelen ocurrir errores.</p>
-                                <p class="mt-2"><strong>Tabla de Decisión:</strong> Para probar lógica de negocio compleja con múltiples condiciones.</p>
-                                <p class="mt-2"><strong>Transición de Estados:</strong> Modela y prueba los cambios de estado de un sistema.</p>
-                                <p class="mt-2"><strong>Pruebas de Casos de Uso:</strong> Verifica los flujos de interacción entre el usuario y el sistema.</p>
+                                <p><strong>Partición de Equivalencia y Análisis de Valores Límite:</strong></p>
+                                <div class="example">Un campo de edad acepta valores de 18 a 65.
+                                    <br>• <strong>Particiones:</strong> `(< 18)`, `(18-65)`, `(> 65)`. Probaríamos con 17, 30, 66.
+                                    <br>• <strong>Valores Límite:</strong> Probaríamos con 17, 18, 19 y 64, 65, 66.
+                                </div>
+                                <p class="mt-2"><strong>Tabla de Decisión:</strong></p>
+                                <div class="example">Login: Condiciones (Usuario válido, Contraseña válida). Acciones (Acceso permitido, Mensaje de error). La tabla tendría 4 reglas para cubrir todas las combinaciones (V/V, V/F, F/V, F/F).</div>
+                                <p class="mt-2"><strong>Transición de Estados:</strong></p>
+                                <div class="example">Un pedido online: `Pendiente` -> (al pagar) -> `Procesando` -> (al enviar) -> `Enviado`. Se prueban estas transiciones.</div>
                             </div>
                         </div>
                         <div class="accordion-item card">
@@ -209,8 +225,12 @@
                                 <span class="accordion-arrow transition-transform duration-300">▼</span>
                             </button>
                             <div class="accordion-content pt-4 text-gray-700">
-                                <p><strong>Cobertura de Sentencias:</strong> Diseña pruebas para ejecutar cada línea de código al menos una vez.</p>
-                                <p class="mt-2"><strong>Cobertura de Decisión:</strong> Diseña pruebas para que cada decisión en el código se evalúe como verdadera y falsa.</p>
+                                <p><strong>Cobertura de Sentencias y Decisión:</strong></p>
+                                <div class="example">
+                                    <pre class="bg-gray-100 p-2 rounded text-xs"><code>IF edad >= 18 THEN<br>  imprimir("Permitido")<br>ELSE<br>  imprimir("Denegado")<br>ENDIF</code></pre>
+                                    • <strong>Cobertura de Sentencias (100%):</strong> Probar con edad = 20 (ejecuta la línea 2). Probar con edad = 15 (ejecuta la línea 4). Se necesitan 2 casos de prueba.
+                                    <br>• <strong>Cobertura de Decisión (100%):</strong> Probar con edad = 20 (la condición es Verdadera). Probar con edad = 15 (la condición es Falsa). Se necesitan 2 casos de prueba.
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item card">
@@ -219,8 +239,10 @@
                                 <span class="accordion-arrow transition-transform duration-300">▼</span>
                             </button>
                             <div class="accordion-content pt-4 text-gray-700">
-                                <p><strong>Pruebas Exploratorias:</strong> El tester diseña y ejecuta pruebas simultáneamente, aprendiendo sobre el sistema.</p>
-                                <p class="mt-2"><strong>Adivinación de Errores:</strong> El tester usa su experiencia para "adivinar" dónde es probable que haya errores.</p>
+                                <p><strong>Pruebas Exploratorias:</strong></p>
+                                 <div class="example">Un tester recibe una nueva app de e-commerce. En lugar de seguir un script, explora libremente: ¿Qué pasa si añado 1000 productos al carrito? ¿Y si uso emojis en el campo de dirección? Anota sus hallazgos y reporta bugs.</div>
+                                <p class="mt-2"><strong>Adivinación de Errores:</strong></p>
+                                <div class="example">Un tester experimentado sabe que las divisiones por cero suelen causar problemas, así que prueba a introducir un '0' en todos los campos numéricos que puedan ser divisores.</div>
                             </div>
                         </div>
                     </div>
@@ -234,26 +256,41 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="card">
                             <h3 class="text-xl font-semibold mb-3">Planificación y Estimación</h3>
-                            <p>Se documenta en el <strong>Plan de Pruebas</strong>, que define el alcance, la estrategia y los recursos. Incluye <strong>criterios de entrada</strong> (cuándo empezar) y <strong>criterios de salida</strong> (cuándo terminar).</p>
+                            <p>Se documenta en el <strong>Plan de Pruebas</strong>, que define el alcance, la estrategia y los recursos. Incluye <strong>criterios de entrada</strong> y <strong>de salida</strong>.</p>
+                            <div class="example">
+                                • <strong>Criterio de Entrada:</strong> "El entorno de pruebas debe estar instalado y estable."
+                                <br>• <strong>Criterio de Salida:</strong> "El 95% de los casos de prueba críticos deben haberse ejecutado y aprobado."
+                            </div>
                              <div class="mt-4 pt-4 border-t border-gray-200">
                                 <h4 class="font-semibold">Técnicas de Estimación</h4>
                                 <ul class="list-disc list-inside text-sm mt-2">
-                                    <li><strong>Basadas en métricas:</strong> Usan datos de proyectos anteriores.</li>
-                                    <li><strong>Basadas en la opinión de expertos:</strong> Como Planning Poker o Delphi.</li>
+                                    <li><strong>Basadas en métricas:</strong> Usar la duración media de pruebas de un proyecto similar.</li>
+                                    <li><strong>Basadas en la opinión de expertos:</strong> En <strong>Planning Poker</strong>, el equipo vota con cartas para estimar el esfuerzo de una tarea.</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card">
                             <h3 class="text-xl font-semibold mb-3">Monitorización y Control</h3>
                             <p>Se recopilan métricas para seguir el progreso (monitorización) y se toman acciones correctivas si hay desviaciones del plan (control).</p>
+                             <div class="example">
+                                • <strong>Métrica:</strong> El número de defectos abiertos aumenta en lugar de disminuir.
+                                <br>• <strong>Acción de Control:</strong> Se dedica un día entero a estabilizar el software y a realizar pruebas de regresión en lugar de probar nuevas funcionalidades.
+                            </div>
                         </div>
                         <div class="card">
                             <h3 class="text-xl font-semibold mb-3">Gestión de Riesgos</h3>
                             <p>Consiste en identificar, analizar y mitigar los riesgos del producto para priorizar el esfuerzo de testing en las áreas más críticas.</p>
+                             <div class="example">
+                                • <strong>Riesgo:</strong> "El rendimiento del sistema de informes puede ser lento con grandes volúmenes de datos."
+                                <br>• <strong>Mitigación:</strong> Se planifican pruebas de carga específicas para el módulo de informes.
+                            </div>
                         </div>
                         <div class="card">
                             <h3 class="text-xl font-semibold mb-3">Gestión de Defectos</h3>
                             <p>Un <strong>informe de defectos</strong> claro es crucial. El ciclo de vida de un defecto describe su paso desde que se reporta hasta que se cierra.</p>
+                            <div class="example">
+                                <strong>Título de Defecto:</strong> "[Cálculo de Envío] El coste es incorrecto para pedidos a las Islas Canarias."
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -266,10 +303,10 @@
                     <div class="card mb-8">
                         <h3 class="text-xl font-semibold mb-3">Clasificación de Herramientas</h3>
                         <ul class="list-disc list-inside space-y-2">
-                            <li><strong>Herramientas de gestión:</strong> Para gestión de pruebas y defectos (ej. Jira, TestRail).</li>
-                            <li><strong>Herramientas para pruebas estáticas:</strong> Analizadores de código estático.</li>
-                            <li><strong>Herramientas de ejecución y registro:</strong> Para automatización de pruebas (ej. Selenium, Cypress).</li>
-                            <li><strong>Herramientas de rendimiento:</strong> Para pruebas de carga y estrés (ej. JMeter).</li>
+                            <li><strong>Herramientas de gestión:</strong> Para gestión de pruebas y defectos (ej. Jira, TestRail, Zephyr).</li>
+                            <li><strong>Herramientas para pruebas estáticas:</strong> Analizadores de código estático (ej. SonarQube, ESLint).</li>
+                            <li><strong>Herramientas de ejecución y registro:</strong> Para automatización de pruebas (ej. Selenium, Cypress, Playwright).</li>
+                            <li><strong>Herramientas de rendimiento:</strong> Para pruebas de carga y estrés (ej. JMeter, Gatling, k6).</li>
                         </ul>
                     </div>
 
@@ -292,6 +329,10 @@
                                     <li>Scripts frágiles ante cambios</li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="example">
+                            <strong>Buen candidato para automatizar:</strong> Una suite de pruebas de regresión que verifica las 20 funcionalidades más críticas del sistema después de cada cambio.
+                            <br><strong>Mal candidato para automatizar:</strong> Una prueba de usabilidad para ver cómo reacciona un nuevo usuario a un rediseño de la interfaz.
                         </div>
                     </div>
                 </section>
