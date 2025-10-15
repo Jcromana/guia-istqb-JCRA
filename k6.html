@@ -216,6 +216,54 @@ export default function () {
             </ul>
         </section>
 
+        <section id="conceptos-fundamentales">
+    <h2>Profundizando en el Uso de k6 (Conceptos Clave)</h2>
+    <p>
+        Para crear pruebas más realistas y complejas, es crucial entender cómo k6 estructura y ejecuta el código. Estos conceptos, extraídos de la <a href="https://grafana.com/docs/k6/latest/using-k6/" target="_blank">documentación oficial</a>, son tu siguiente paso para dominar la herramienta.
+    </p>
+
+    <h3>El Ciclo de Vida de una Prueba en k6</h3>
+    <p>Un script de k6 no se ejecuta de arriba a abajo sin más. Sigue un ciclo de vida bien definido:</p>
+    <ol>
+        <li><strong>Código `init`</strong>: Es el código que está en el ámbito global, fuera de cualquier función. Se ejecuta una sola vez por cada Usuario Virtual (VU). Aquí es donde importas módulos y defines las opciones de la prueba (<code>options</code>). <strong>No puedes hacer llamadas HTTP en esta fase</strong>.</li>
+        <li><strong><code>setup</code></strong>: Es una función opcional que se ejecuta una única vez al principio de toda la prueba, antes de que los VUs empiecen a operar. Es ideal para preparar datos, como obtener un token de autenticación que todos los VUs usarán.</li>
+        <li><strong>Ejecución del VU (Función <code>default</code> o Escenarios)</strong>: Este es el código que los VUs ejecutarán en un bucle durante el tiempo que dure la prueba. Aquí es donde realizas las peticiones HTTP, los `checks` y los `sleeps`.</li>
+        <li><strong><code>teardown</code></strong>: Es una función opcional que se ejecuta una única vez al final de toda la prueba, después de que todos los VUs han terminado. Es perfecta para limpiar los datos creados durante la prueba.</li>
+    </ol>
+
+    <h3>Escenarios: Modelando Carga Realista</h3>
+    <p>
+        Usar <code>vus</code> y <code>duration</code> en las opciones es ideal para pruebas sencillas. Sin embargo, para simular patrones de tráfico más realistas (como un aumento gradual de usuarios), se utilizan los <strong>escenarios</strong>. Los escenarios te dan control total sobre cómo y cuándo se aplica la carga.
+    </p>
+    <p>
+        Aquí tienes un ejemplo de un escenario que simula una "rampa": empieza con 0 usuarios, sube a 10 en 20 segundos y luego baja a 0 en 10 segundos.
+    </p>
+    <pre><button class="copy-btn">Copiar</button><code>import http from 'k6/http';
+import { sleep } from 'k6';
+
+export const options = {
+  scenarios: {
+    ramping_load: {
+      executor: 'ramping-vus', // Tipo de escenario: rampa de VUs
+      startVUs: 0,
+      stages: [
+        { duration: '20s', target: 10 }, // Sube a 10 usuarios en 20s
+        { duration: '30s', target: 10 }, // Mantiene 10 usuarios por 30s
+        { duration: '10s', target: 0 },  // Baja a 0 usuarios en 10s
+      ],
+    },
+  },
+};
+
+export default function () {
+  http.get('https://test.k6.io');
+  sleep(1);
+}</code></pre>
+    <p>
+        Los escenarios son una herramienta muy poderosa para imitar el comportamiento real de los usuarios en tu aplicación.
+    </p>
+</section>
+
         <footer>
             <p>Página generada como guía rápida para usar k6 en macOS.</p>
         </footer>
