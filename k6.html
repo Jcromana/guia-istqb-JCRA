@@ -165,16 +165,46 @@ export default function () {
         </section>
 
         <section id="analisis-resultados">
-            <h2>Paso 3: Entendiendo los Resultados</h2>
-            <p>Al finalizar la prueba, k6 te mostrará un resumen con métricas clave. Aquí están las más importantes para empezar:</p>
+    <h2>Paso 3: Entendiendo los Resultados</h2>
+    <p>Al finalizar la prueba, k6 te mostrará un resumen con métricas clave. Aquí están las más importantes para empezar, con ejemplos para entender qué significan:</p>
+    <ul>
+        <li>
+            <strong><code>checks</code></strong>: El porcentaje de tus verificaciones que pasaron.
+            <br>
+            <em>Ejemplo:</em> Si tu script tiene <code>check(res, {'El estado es 200': (r) => r.status === 200})</code> y esta métrica es del 90%, significa que el 10% de las respuestas del servidor no tuvieron el código de estado 200. ¡Busca siempre el 100%!
+        </li>
+        <br>
+        <li>
+            <strong><code>http_reqs</code></strong>: El número total de peticiones HTTP que se realizaron durante la prueba.
+            <br>
+            <em>Ejemplo:</em> Si tu prueba duró 30 segundos y ves <code>http_reqs: 150</code>, significa que tu sistema manejó un promedio de 5 peticiones por segundo (RPS).
+        </li>
+        <br>
+        <li>
+            <strong><code>http_req_failed</code></strong>: El porcentaje de peticiones que fallaron. Un fallo puede ser un error de conexión, un timeout o una respuesta inválida del servidor (como un error 500).
+            <br>
+            <em>Ejemplo:</em> Un valor de <code>5%</code> indica que 5 de cada 100 peticiones no se completaron correctamente. Un sistema saludable debería tener este valor en <strong>0%</strong>.
+        </li>
+        <br>
+        <li>
+            <strong><code>http_req_duration</code></strong>: Mide cuánto tiempo tardó el servidor en procesar y responder a una petición, sin contar el tiempo de espera de la red. Es la métrica más importante para medir la velocidad de tu backend.
             <ul>
-                <li><code>checks</code>: El porcentaje de tus verificaciones que pasaron. ¡Busca siempre el 100%!</li>
-                <li><code>http_req_duration</code>: El tiempo que tardó el servidor en responder. Es la métrica principal de rendimiento. Se muestra el promedio (avg), mínimo (min), máximo (max) y percentiles (p90, p95).</li>
-                <li><code>http_req_failed</code>: El porcentaje de peticiones que fallaron. Debería ser 0%.</li>
-                <li><code>vus</code>: El número de usuarios virtuales activos durante la prueba.</li>
-                <li><code>iterations</code>: El número total de veces que se ejecutó la función principal de tu script.</li>
+                <br>
+                <li><strong><code>avg</code> (Promedio):</strong> El tiempo medio de respuesta. Es útil, pero puede ser engañoso si hay valores extremos.</li>
+                <li><strong><code>min</code> y <code>max</code> (Mínimo y Máximo):</strong> Te muestran el mejor y el peor tiempo de respuesta. Un <code>max</code> muy alto puede indicar un problema puntual en tu servidor.</li>
+                <li><strong><code>p(90)</code>, <code>p(95)</code> (Percentiles):</strong> Son las métricas más valiosas. <code>p(95)=130.6ms</code> significa que el 95% de tus usuarios experimentaron un tiempo de respuesta inferior a 130.6ms, mientras que el 5% más lento tuvo una respuesta peor. Es un indicador mucho más realista de la experiencia del usuario que el promedio.</li>
             </ul>
-        </section>
+        </li>
+        <br>
+        <li>
+            <strong><code>vus</code></strong>: El número de usuarios virtuales activos durante la prueba. Te ayuda a confirmar que la carga se aplicó como esperabas.
+        </li>
+        <br>
+        <li>
+            <strong><code>iterations</code></strong>: El número total de veces que se ejecutó la función principal de tu script. Te da una idea del volumen total de ciclos de usuario completados.
+        </li>
+    </ul>
+</section>
         
         <section id="proximos-pasos">
             <h2>Próximos Pasos</h2>
