@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Guía de Instalación y Uso de k6 en macOS&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Estilos generales y tipografía */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Contenedor principal */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Títulos */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2c3e50;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #e0e0e0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 { font-size: 2.2em; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 { font-size: 1.8em; margin-top: 40px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h3 { font-size: 1.4em; border-bottom: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Párrafos y listas */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>p, li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Bloques de código */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2d2d2d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #f8f8f2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative; /* Necesario para el botón de copiar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>code {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Código en línea */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>p &gt; code, li &gt; code {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e0e0e0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #d63384;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2px 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Botón de copiar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.copy-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #6c757d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre:hover .copy-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.copy-btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #5a6268;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Links */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #007bff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: underline;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #e0e0e0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #777;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Guía Completa para k6 en macOS&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Una guía paso a paso para instalar, configurar y ejecutar tus primeras pruebas de rendimiento con k6 en un entorno macOS.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="instalacion"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Paso 1: Instalación de k6&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;La forma más sencilla y recomendada de instalar k6 en macOS es a través de &lt;strong&gt;Homebrew&lt;/strong&gt;, un popular gestor de paquetes.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;1.1 - Instalar Homebrew (si no lo tienes)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Abre la aplicación &lt;strong&gt;Terminal&lt;/strong&gt; y pega el siguiente comando:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;button class="copy-btn"&gt;Copiar&lt;/button&gt;&lt;code&gt;/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;1.2 - Instalar k6 con Homebrew&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Una vez que Homebrew esté listo, instala k6 con este simple comando:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;button class="copy-btn"&gt;Copiar&lt;/button&gt;&lt;code&gt;brew install k6&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;1.3 - Verificar la Instalación&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Para confirmar que k6 se ha instalado correctamente, ejecuta el siguiente comando. Deberías ver la versión de k6 instalada.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;button class="copy-btn"&gt;Copiar&lt;/button&gt;&lt;code&gt;k6 version&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="uso-basico"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Paso 2: Cómo Usar k6 (Tu Primera Prueba)&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;El uso de k6 se basa en escribir scripts de prueba en JavaScript y ejecutarlos desde la terminal.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;2.1 - Crear el Script de Prueba&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Crea un archivo llamado &lt;code&gt;mi-prueba.js&lt;/code&gt; y pega el siguiente código. Este script simula un usuario que visita una página de prueba.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;button class="copy-btn"&gt;Copiar&lt;/button&gt;&lt;code&gt;import http from 'k6/http';</p>
+<p class="p1">import { check, sleep } from 'k6';</p>
+<p class="p2"><br></p>
+<p class="p1">// 1. Opciones de la prueba (Configuración)</p>
+<p class="p1">export const options = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Simula 1 usuario virtual (VU)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>vus: 1,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Durante 30 segundos</p>
+<p class="p1"><span class="Apple-converted-space">  </span>duration: '30s',</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">// 2. Código del usuario virtual (Lo que hará cada usuario)</p>
+<p class="p1">export default function () {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Realiza una petición GET a la URL de prueba de k6</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const res = http.get('https://test.k6.io');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 3. Verificaciones (Checks) para validar la respuesta</p>
+<p class="p1"><span class="Apple-converted-space">  </span>check(res, {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'El estado es 200': (r) =&gt; r.status === 200,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Espera 1 segundo antes de la siguiente iteración</p>
+<p class="p1"><span class="Apple-converted-space">  </span>sleep(1);</p>
+<p class="p1">}&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;2.2 - Ejecutar la Prueba&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;En tu terminal, navega a la carpeta donde guardaste el archivo &lt;code&gt;mi-prueba.js&lt;/code&gt; y ejecuta el comando:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;button class="copy-btn"&gt;Copiar&lt;/button&gt;&lt;code&gt;k6 run mi-prueba.js&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="analisis-resultados"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Paso 3: Entendiendo los Resultados&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Al finalizar la prueba, k6 te mostrará un resumen con métricas clave. Aquí están las más importantes para empezar:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;checks&lt;/code&gt;: El porcentaje de tus verificaciones que pasaron. ¡Busca siempre el 100%!&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;http_req_duration&lt;/code&gt;: El tiempo que tardó el servidor en responder. Es la métrica principal de rendimiento. Se muestra el promedio (avg), mínimo (min), máximo (max) y percentiles (p90, p95).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;http_req_failed&lt;/code&gt;: El porcentaje de peticiones que fallaron. Debería ser 0%.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;vus&lt;/code&gt;: El número de usuarios virtuales activos durante la prueba.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;iterations&lt;/code&gt;: El número total de veces que se ejecutó la función principal de tu script.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="proximos-pasos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Próximos Pasos&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;¡Felicidades! Has completado tu primera prueba de carga. Ahora puedes:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Aumentar la carga:&lt;/strong&gt; Modifica las &lt;code&gt;options&lt;/code&gt; en tu script para simular más usuarios (&lt;code&gt;vus&lt;/code&gt;) o una mayor duración (&lt;code&gt;duration&lt;/code&gt;).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Probar tu propia API:&lt;/strong&gt; Cambia la URL en &lt;code&gt;http.get()&lt;/code&gt; por un endpoint de tu aplicación.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Explorar la documentación:&lt;/strong&gt; Para aprender sobre escenarios avanzados, umbrales y más, visita la &lt;a href="https://k6.io/docs/" target="_blank"&gt;documentación oficial de k6&lt;/a&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Página generada como guía rápida para usar k6 en macOS.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Funcionalidad para los botones de "Copiar"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const copyButtons = document.querySelectorAll('.copy-btn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>copyButtons.forEach(button =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const pre = button.parentElement;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const code = pre.querySelector('code');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const textToCopy = code.innerText;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>navigator.clipboard.writeText(textToCopy).then(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>button.innerText = '¡Copiado!';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>button.innerText = 'Copiar';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}).catch(err =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.error('Error al copiar el texto: ', err);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
